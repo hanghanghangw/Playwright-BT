@@ -3,12 +3,12 @@ import { test, expect } from '@playwright/test';
 
 test("Dăng nhập thành công", async ({ page }) => {
   await page.goto("https://vivainternational.vn/auth/signup")
-  await page.locator('xpath=//input[@name="name"]').fill('Nguyễn Gia Hân')
-  await page.locator('xpath=//input[@name="phone"]').fill('0938656910')
-  await page.locator('xpath=//input[@name="email"]').fill('nguyengiahân@gmail.com')
-  await page.locator('xpath=//input[@name="password"]').fill('nguyengiahan')
+  await page.locator('//input[@name="name"]').fill('Nguyễn Gia Hân')
+  await page.locator('//input[@name="phone"]').fill('0938656910')
+  await page.locator('//input[@name="email"]').fill('nguyengiahan@gmail.com')
+  await page.locator('//input[@name="password"]').fill('nguyengiahan')
   await page.getByRole('button', { name: 'Đăng ký', exact: true }).click();
-  await expect(page).toHaveURL("/user/dashboard"); 
+  await expect(page).toHaveURL("/\/user\/dashboard$/");
 
   // await page.locator('xpath=/html/body/div/div[2]/div/div/main/div/form/input[1]').fill('quantri@vivainternational.vn')
   // await page.locator('//input[@name="password"]').type("8u5xJl1tzEz7bhXT0")
